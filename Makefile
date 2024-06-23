@@ -84,7 +84,7 @@ conda/venv: conda/install
 conda/install:
 >   @if [ ! -d "$(CONDA_ROOT)" ]; then \
 >       echo "Warning: Your python / python version does not meet the requirements, installing using miniconda..."; \
->       curl -o conda.sh "$(CONDA_URL)" && chmod +x conda.sh && bash conda.sh -b -f -p "$(CONDA_ROOT)"; \
+>       curl -L -o conda.sh "$(CONDA_URL)" && chmod +x conda.sh && bash conda.sh -b -f -p "$(CONDA_ROOT)"; \
 >       rm conda.sh 2>/dev/null; \
 >   fi
 
